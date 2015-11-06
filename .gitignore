@@ -1,2 +1,4 @@
 /data
 *.plx
+*.m~
+/lib/mvgc/docs/html
