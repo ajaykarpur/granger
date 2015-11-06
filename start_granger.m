@@ -4,6 +4,8 @@
 % Neural Microsystems Lab
 % -------------------------------------------------------------------------
 
+addpath(genpath(pwd))
+
 % enter filename for data
 filename = 'data/GAPDH baseline.plx';
 
@@ -20,8 +22,9 @@ end
 
 %% MVGC Parameters
 
-ntrials   = 10;     % number of trials
+ntrials   = 1;     % number of trials
 nobs      = 1000;   % number of observations per trial
+nvars     = plx.NumContChannels;
 
 regmode   = 'OLS';  % VAR model estimation regression mode ('OLS', 'LWR' or empty for default)
 icregmode = 'LWR';  % information criteria regression mode ('OLS', 'LWR' or empty for default)
