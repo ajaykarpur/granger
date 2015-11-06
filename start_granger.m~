@@ -1,0 +1,13 @@
+% script for Granger causality analysis on continuous Plexon recordings
+
+filename = 'data/GAPDH baseline.plx';
+
+startup;
+
+plx = readPLXFileC(filename,'continuous');
+
+% check if file has continuous data
+if isempty(plx.ContinuousChannels)
+    fprintf('\nThis file has no continuous data. Please select another .plx file.\n')
+    fprintf('Alternatively, you may try using start_granger_pp.m for a point process model.\n\n')
+end
