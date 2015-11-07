@@ -1,4 +1,6 @@
-%% Granger causality analysis for Plexon files
+%% Granger causality analysis for continuous Plexon data
+%
+% *WARNING:* This script is unfinished and not yet functional!
 %
 % Ajay Karpur
 % Neural Microsystems Lab
@@ -22,7 +24,7 @@ end
 
 %% MVGC Parameters
 
-ntrials   = 1;     % number of trials
+ntrials   = 1;      % number of trials
 nobs      = 1000;   % number of observations per trial
 nvars     = plx.NumContChannels;
 
@@ -32,16 +34,14 @@ icregmode = 'LWR';  % information criteria regression mode ('OLS', 'LWR' or empt
 morder    = 'AIC';  % model order to use ('actual', 'AIC', 'BIC' or supplied numerical value)
 momax     = 20;     % maximum model order for model order estimation
 
-acmaxlags = 1000;   % maximum autocovariance lags (empty for automatic calculation)
+acmaxlags = [];     % maximum autocovariance lags (empty for automatic calculation)
 
-tstat     = '';     % statistical test for MVGC:  'F' for Granger's F-test (default) or 'chi2' for Geweke's chi2 test
+tstat     = 'F';     % statistical test for MVGC:  'F' for Granger's F-test (default) or 'chi2' for Geweke's chi2 test
 alpha     = 0.05;   % significance level for significance test
 mhtc      = 'FDR';  % multiple hypothesis test correction (see routine 'significance')
 
 fs        = plx.WaveformFreq;    % sample rate (Hz)
 fres      = [];     % frequency resolution (empty for automatic calculation)
-
-seed      = 0;      % random seed (0 for unseeded)
 
 %% Load data
 
