@@ -32,4 +32,4 @@ end
 save('result_real_catM1','bhat','aic','LLK');
 
 % Identify Granger causality
-% CausalTest;
+% CausalTestTrials;
